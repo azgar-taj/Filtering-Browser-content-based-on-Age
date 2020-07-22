@@ -1,0 +1,51 @@
+<html>
+  <head>
+    <title>Detect Age from Face Sample</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+  </head>
+  <body>
+    <script type="text/javascript"></script>
+    <h1>Detect Age from Face Sample</h1>
+    Press <strong>Start streaming</strong> and
+    <strong> capture your image</strong>, then click the
+    <strong>Analyze face</strong> button.<br /><br />
+    <button id="btn-start" type="button" class="button">
+      Start Streaming
+    </button>
+    <button id="btn-stop" type="button" class="button">Stop Streaming</button>
+    <button id="btn-capture" type="button" class="button">
+      Capture Image
+    </button>
+    <button onclick="processImage()">Analyze face</button><br /><br />
+    <div id="wrapper" style="width: 1020px; display: table;">
+      <div id="jsonOutput" style="width: 600px; display: table-cell;">
+        Response:<br /><br />
+        <textarea
+          id="responseTextArea"
+          class="UIInput"
+          style="width: 580px; height: 400px;"
+        ></textarea>
+      </div>
+      <div id="imageDiv" style="width: 420px; display: table-cell;">
+        Source image:<br /><br />
+        <img id="sourceImage" width="400" />
+      </div>
+    </div>
+    <div class="button-group"></div>
+
+    <!-- Video Element & Canvas -->
+    <div class="play-area">
+      <div class="play-area-sub">
+        <h3>The Stream</h3>
+        <video id="stream" width="320" height="240"></video>
+      </div>
+      <div class="play-area-sub">
+        <h3>The Capture</h3>
+        <canvas id="capture" width="320" height="240"></canvas>
+        <div id="snapshot"></div>
+      </div>
+    </div>
+    <script type="text/javascript" src="webcam_scripts.js"></script>
+    <script type="text/javascript" src="faceAPI_scripts.js"></script>
+  </body>
+</html>
