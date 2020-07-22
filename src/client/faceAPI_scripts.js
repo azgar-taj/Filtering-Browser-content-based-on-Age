@@ -1,3 +1,5 @@
+var btnProcessImage = document.getElementById("btn-processImage");
+btnProcessImage.addEventListener("click", processImage);
 function processImage() {
   // Replace <Subscription Key> with your valid subscription key.
   var subscriptionKey = "927e95e2809242439d2c9934c0454631";

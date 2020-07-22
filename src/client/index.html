@@ -1,7 +1,7 @@
 <html>
   <head>
     <title>Detect Age from Face Sample</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="jquery.min.js"></script>
   </head>
   <body>
     <script type="text/javascript"></script>
@@ -16,7 +16,8 @@
     <button id="btn-capture" type="button" class="button">
       Capture Image
     </button>
-    <button onclick="processImage()">Analyze face</button><br /><br />
+    <button id="btn-processImage" class="button">Analyze face</button
+    ><br /><br />
     <div id="wrapper" style="width: 1020px; display: table;">
       <div id="jsonOutput" style="width: 600px; display: table-cell;">
         Response:<br /><br />
@@ -31,7 +32,6 @@
         <img id="sourceImage" width="400" />
       </div>
     </div>
-    <div class="button-group"></div>
 
     <!-- Video Element & Canvas -->
     <div class="play-area">
@@ -47,5 +47,6 @@
     </div>
     <script type="text/javascript" src="webcam_scripts.js"></script>
     <script type="text/javascript" src="faceAPI_scripts.js"></script>
+    <script type="text/javascript" src="test.js"></script>
   </body>
 </html>
