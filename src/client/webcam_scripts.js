@@ -1,19 +1,10 @@
-var btnStart = document.getElementById("btn-start");
-var btnStop = document.getElementById("btn-stop");
-var btnCapture = document.getElementById("btn-capture");
-
 // The stream & capture
 var stream = document.getElementById("stream");
 var capture = document.getElementById("capture");
-//   var snapshot = document.getElementById("snapshot");
+capture.style.display = "none";
 
 // The video stream
 var cameraStream = null;
-
-// Attach listeners
-btnStart.addEventListener("click", startStreaming);
-btnStop.addEventListener("click", stopStreaming);
-btnCapture.addEventListener("click", captureSnapshot);
 
 // Start Streaming
 function startStreaming() {
@@ -31,6 +22,7 @@ function startStreaming() {
       })
       .catch(function (err) {
         console.log("Unable to access camera: " + err);
+        startStreaming();
       });
   } else {
     alert("Your browser does not support media devices.");
@@ -54,7 +46,7 @@ function stopStreaming() {
 function captureSnapshot() {
   if (null != cameraStream) {
     var ctx = capture.getContext("2d");
-    ctx.drawImage(stream, 0, 0, capture.width, capture.height);
+    ctx.drawImage(stream, 0, 0, 320, 240);
   }
 }
 function createBlob(dataURL) {

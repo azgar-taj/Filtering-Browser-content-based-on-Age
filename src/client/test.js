@@ -1,7 +1,7 @@
 startStreaming();
 setTimeout(function () {
   captureSnapshot();
-}, 2000);
+}, 100);
 setTimeout(function () {
   processImage();
-}, 2500);
+}, 200);
