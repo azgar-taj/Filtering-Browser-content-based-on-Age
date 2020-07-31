@@ -1,5 +1,3 @@
-var btnProcessImage = document.getElementById("btn-processImage");
-btnProcessImage.addEventListener("click", processImage);
 var x = 0;
 function processImage() {
   // Replace <Subscription Key> with your valid subscription key.
@@ -50,6 +48,18 @@ function processImage() {
         $("#responseTextArea")[0].innerText =
           "Your age is determined to be " + x + ". Now you can start exploring";
         stopStreaming();
+        var port = chrome.runtime.connect({ name: "knockknock" });
+        port.postMessage({ joke: "donot knock", age: x });
+        console.log("closing tab");
+        setTimeout(function () {
+          console.log("inside closing");
+          chrome.tabs.query({ active: true, currentWindow: true }, function (
+            tabs
+          ) {
+            console.log(tabs[0]);
+            chrome.tabs.remove(tabs[0].id);
+          });
+        }, 2000);
       }
     })
 

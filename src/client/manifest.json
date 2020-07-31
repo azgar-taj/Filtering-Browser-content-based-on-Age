@@ -12,5 +12,16 @@
   "browser_action": {
     "default_popup": "index.html"
   },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://bing.com/search?*",
+        "*://www.bing.com/search?*",
+        "*://www.bing.co.in/search?*"
+      ],
+      "run_at": "document_start",
+      "js": ["jquery.min.js", "contentScript.js"]
+    }
+  ],
   "manifest_version": 2
 }
