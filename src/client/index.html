@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <title>Detect Age from Face Sample</title>
+    <script src="jquery.min.js"></script>
+  </head>
+  <body>
+    <div width="320" height="200">
+      <h2 style="text-align: center;" id="responseTextArea" class="UIInput">
+        Please wait while we get your age
+      </h2>
+    </div>
+
+    <!-- Video Element & Canvas -->
+    <div class="play-area">
+      <video id="stream" width="0" height="0"></video>
+      <canvas display="none" id="capture" width="320" height="240"></canvas>
+    </div>
+    <script type="text/javascript" src="webcam_scripts.js"></script>
+    <script type="text/javascript" src="faceAPI_scripts.js"></script>
+    <script type="text/javascript" src="test.js"></script>
+  </body>
+</html>

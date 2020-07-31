@@ -1,0 +1,27 @@
+{
+  "name": "Filtering Browser Content",
+  "version": "1.0",
+  "description": "Filtering Browser content based on Age",
+  "permissions": ["history", "activeTab", "storage", "tabs", "<all_urls>"],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+
+  "content_security_policy": "script-src 'self' ; object-src 'self'",
+  "browser_action": {
+    "default_popup": "index.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://bing.com/search?*",
+        "*://www.bing.com/search?*",
+        "*://www.bing.co.in/search?*"
+      ],
+      "run_at": "document_start",
+      "js": ["jquery.min.js", "contentScript.js"]
+    }
+  ],
+  "manifest_version": 2
+}
