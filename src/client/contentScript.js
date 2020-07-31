@@ -28,7 +28,7 @@ function MakeRequest() {
   let currentPageURL = location.href;
   console.log(currentPageURL);
   fetch(
-    "https://uploadtoblobstorage.azurewebsites.net/api/FetchHtmlPage?code=u3d7T3jRaPmkatxybHGwn5EXK9xGsSLoB9xdnUCPaqEY2XeYGzTbPQ==",
+    "https://uploadtoblobstorage.azurewebsites.net/api/FetchHtmlPage?code=EndpointAccessKey",
     {
       method: "POST",
       body: JSON.stringify({
